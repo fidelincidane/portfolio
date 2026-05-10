@@ -1,0 +1,185 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.projects {
+  margin: 50px 15px 56px;
+  position: relative;
+  @include m.tablet {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 0;
+  }
+  @include m.desktop {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    a {
+      @include m.tablet {
+        align-items: end;
+      }
+      span {
+        @include m.tablet {
+          width: 34%;
+        }
+        @include m.desktop {
+          width: 22%;
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: v.$color-white;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -1.136px;
+    @include m.tablet {
+      font-size: 72px;
+      line-height: 72px;
+      letter-spacing: -2.05px;
+    }
+    @include m.desktop {
+      font-size: 88px;
+      line-height: 96px;
+      letter-spacing: -2.5px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include m.tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @include m.desktop {
+      gap: 2rem;
+    }
+  }
+}
+
+.contenedor__proyects {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.project {
+  position: relative;
+  @include m.desktop {
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    @include m.desktop {
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &__title {
+    color: v.$color-white;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 0;
+  }
+
+  &__tech {
+    color: v.$color-gray;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    word-spacing: 18px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 38px;
+    @include m.desktop {
+      position: absolute;
+      gap: 4rem;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+      margin-bottom: 0;
+    }
+  }
+  & span {
+    margin-top: 10px;
+  }
+}
+.project::before {
+  @include m.desktop {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+}
+
+.project-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+
+  &--green {
+    color: v.$color-white;
+
+    &:hover {
+      color: v.$color-green;
+    }
+
+    .project-link__line {
+      background: v.$color-green;
+    }
+  }
+
+  &--code {
+    color: v.$color-white;
+
+    &:hover {
+      color: v.$color-green;
+    }
+
+    .project-link__line {
+      background: v.$color-green;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 2px;
+  }
+}
+@include m.desktop {
+  .project:hover .project__links {
+    opacity: 1;
+  }
+
+  .project:hover .project__image {
+    opacity: 0.25;
+  }
+}

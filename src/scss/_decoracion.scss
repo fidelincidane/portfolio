@@ -1,0 +1,92 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.decoration__hero {
+  position: absolute;
+  top: 150px;
+  right: 192%;
+  z-index: -1;
+
+  @include m.tablet {
+    left: -34%;
+    top: -2rem;
+    bottom: auto;
+    z-index: 8;
+  }
+
+  @include m.desktop {
+    left: -7%;
+    top: 4%;
+  }
+}
+
+.decoration__technologies {
+  position: absolute;
+  top: 90%;
+  left: 53%;
+  @include m.tablet {
+    top: 83%;
+    left: 76%;
+  }
+  @include m.desktop {
+    top: 67%;
+    left: 80%;
+  }
+}
+.decoration__contact {
+  position: absolute;
+  bottom: 32%;
+  right: 189%;
+  @include m.tablet {
+    right: 151%;
+    bottom: 21%;
+  }
+  @include m.desktop {
+    right: 115%;
+    bottom: 38%;
+  }
+}
+
+.decoration__circle {
+  position: absolute;
+  width: 530px;
+  height: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+.decoration__circle:nth-child(1) {
+  top: 0;
+}
+.decoration__circle:nth-child(2) {
+  top: 12px;
+}
+.decoration__circle:nth-child(3) {
+  top: 24px;
+}
+.decoration__circle:nth-child(4) {
+  top: 36px;
+}
+.decoration__circle:nth-child(5) {
+  top: 48px;
+}
+
+.decoration--hero-decoration {
+  position: absolute;
+  top: 279px;
+  right: -18%;
+  width: 130px;
+  height: 130px;
+  z-index: -1;
+  pointer-events: none;
+  @include m.tablet {
+    top: 21rem;
+    right: -4rem;
+    z-index: 9;
+  }
+
+  @include m.desktop {
+    top: 28rem;
+    right: 36rem;
+    z-index: 9;
+  }
+}

@@ -1,0 +1,63 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.technologies {
+  position: relative;
+}
+.contenedor__tecnology {
+  margin: 1rem;
+  border-bottom: 1px solid v.$color-white;
+  @include m.tablet {
+    padding-left: 1rem;
+    border-bottom: none;
+  }
+  @include m.desktop {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+.technologies__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  margin-bottom: 20px;
+  @include m.tablet {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+  @include m.desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.technology {
+  &__name {
+    color: v.$color-white;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    @include m.tablet {
+      font-size: 48px;
+      line-height: 56px;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__desc {
+    color: v.$color-gray;
+    margin: 0;
+    font-size: 16px;
+    line-height: 26px;
+    @include m.tablet {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+}

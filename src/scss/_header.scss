@@ -1,0 +1,56 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.header {
+  display: flex;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 2rem;
+  gap: 1rem;
+
+  @include m.tablet {
+    flex-direction: row;
+  }
+  @include m.desktop {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include m.tablet {
+    flex-direction: row;
+  }
+}
+.social {
+  display: flex;
+  gap: 1.5rem;
+  @include m.tablet {
+    gap: 2rem;
+  }
+}
+
+.social-icon {
+  @include m.tablet {
+    font-size: 1.5rem;
+  }
+}
+
+.social-icon img {
+  @include m.tablet {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
+.social-icon:hover img {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(61%) saturate(438%)
+    hue-rotate(100deg) brightness(95%) contrast(90%);
+}
