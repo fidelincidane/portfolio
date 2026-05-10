@@ -29,7 +29,7 @@ npm run dev
 ## Scripts disponibles ⚙️
 
 - `npm run dev` - Inicia servidor local con Vite
-- `npm run build` - Genera build de produccion en `dist/`
+- `npm run build` - Genera build de produccion en `docs/`
 - `npm run preview` - Previsualiza el build generado
 
 ## Despliegue en GitHub Pages 🌐
